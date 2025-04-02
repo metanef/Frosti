@@ -49,6 +49,19 @@ export interface UserConfig {
   };
 }
 
+export interface MonsterConfig {
+  logo: string;
+  drink: {
+    original: string;
+    reserve: string;
+    ultra: string;
+    juice: string;
+    rehab: string;
+    java: string;
+    triple_shot: string;
+  };
+}
+
 export interface TranslationLabel {
   noTag: string;
   tagCard: string;
@@ -93,4 +106,5 @@ export interface Translations {
 export interface Config {
   site: SiteConfig;
   user: UserConfig;
+  monster: MonsterConfig;
 }
