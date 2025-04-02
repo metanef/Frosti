@@ -5,9 +5,10 @@
 <p style="text-align: center;">
   <a href="https://metanef.github.io/Mworld/">Demo live</a>
 </p>
-| Centered Link |
-|:------------:|
-| [Click here](https://example.com) |
+<center>
+  [Click here](https://example.com)
+</center>
+
 
 
 
