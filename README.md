@@ -1,9 +1,11 @@
 <pre align="center">
   Single page monster listing website 🚀 Built with Astro
 </pre>
-<div align="center">
-  [Demo live](https://metanef.github.io/Mworld/)
-</div>
+
+<p style="text-align: center;">
+  <a href="https://metanef.github.io/Mworld/">Demo live</a>
+</p>
+
 
 <div align="center">
 <img alt="Frosti Logo" src="public/monster.png" width="100px">
