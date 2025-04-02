@@ -29,6 +29,15 @@ export const USER_NAME = config.user.name;
 export const USER_SITE = config.user.site;
 export const USER_AVATAR = config.user.avatar;
 
+export const MONSTER = config.monster.logo;
+export const MONSTER_ORIGINAL = config.monster.drink.original;
+export const MONSTER_RESERVE = config.monster.drink.reserve;
+export const MONSTER_ULTRA = config.monster.drink.ultra;
+export const MONSTER_JUICE = config.monster.drink.juice;
+export const MONSTER_REHAB = config.monster.drink.rehab;
+export const MONSTER_JAVA = config.monster.drink.java;
+export const MONSTER_TRIPLE_SHOT = config.monster.drink.triple_shot;
+
 // 社交图标配置（侧边栏和页脚）
 export const USER_SIDEBAR_SOCIAL_ICONS = config.user.sidebar.social;
 export const USER_FOOTER_SOCIAL_ICONS = config.user.footer.social;

@@ -16,48 +16,17 @@ site:
       href: / # 菜单项链接的地址
       svg: "material-symbols:home-outline-rounded"
       target: _self
-    - id: about
-      text: About
-      href: /about
-      svg: "material-symbols:info-outline-rounded"
-      target: _self
-    - id: blog
-      text: Blogs
-      href: /blog
-      svg: "material-symbols:book-2-outline-rounded"
-      target: _self
-      subItems:
-        - id: all
-          text: All blogs
-          href: /blog
-          svg: "material-symbols:ink-pen-outline-rounded"
-          target: _self
-        - id: tech
-          text: Tech blogs
-          href: /blog/category/tech
-          svg: "material-symbols:deployed-code-outline"
-          target: _self
-        - id: life
-          text: Life blogs
-          href: /blog/category/life
-          svg: "material-symbols:earthquake-rounded"
-          target: _self
-        # 子菜单项配置
-    - id: project
-      text: Project
-      href: /project
-      svg: "material-symbols:code-blocks-outline"
-      target: _self
-    - id: friend
-      text: Friend
-      href: /friend
-      svg: "material-symbols:supervisor-account-outline-rounded"
-      target: _self
-    - id: contact
-      text: Contact
-      href: "mailto:contact.evesunmaple@outlook.com"
-      target: _blank # 在新标签页打开
-      svg: "material-symbols:attach-email-outline-rounded"
+
+monster:
+  logo: /image
+  drink:
+    original: /image/drink/original
+    reserve: /image/drink/reserve
+    ultra: /image/drink/ultra
+    juice: /image/drink/juice
+    rehab: /image/drink/rehab
+    java: /image/drink/java
+    triple_shot: /image/drink/triple_shot
 
 # 用户的个人信息
 user:

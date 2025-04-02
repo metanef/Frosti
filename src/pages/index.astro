@@ -1,179 +1,490 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
-import MainCard from "@/components/MainCard.astro";
-import FeatureCard from "@/components/mdx/FeatureCard.astro";
-import GitHubStats from "@/components/mdx/GitHubStats.astro";
+import MainCard from "../components/MainCard.astro";
+import FeatureCard from "../components/mdx/FeatureCard.astro";
+import ScrollToTop from "../components/widgets/ScrollToTop.astro";
+import { Image } from "astro:assets";
+import { USER_AVATAR, MONSTER, MONSTER_ULTRA, MONSTER_ORIGINAL, MONSTER_RESERVE, MONSTER_JUICE, MONSTER_REHAB, MONSTER_JAVA, MONSTER_TRIPLE_SHOT } from "../config";
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="mworld">
   <MainCard
-    title="Welcome to Frosti"
+    title="welcome"
     description="A modern, responsive, feature-rich blog theme for Astro with dark/light mode and customizable options."
-    textOverlay="HOME"
+    textOverlay="mworld"
     infoIcon="lucide:info"
   >
+  <Image
+    class="mask mask-circle place-self-center"
+    format="webp"
+    width={150}
+    height={150}
+    src={USER_AVATAR}
+    alt="Profile"
+    loading="eager"
+  />
     <div class="space-y-8">
       <!-- Hero Section -->
       <section class="py-6">
         <div class="flex flex-col items-center text-center">
-          <h1 class="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            🌟 Frosti Blog Theme
+          <h1 class="text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-300 to-emerald-600 bg-clip-text text-transparent">
+            🥤 m world
           </h1>
           <p class="text-xl text-base-content/80 max-w-3xl mb-8">
-            A minimal, responsive, and feature-rich Astro blog theme designed for creators who value beautiful content
-            presentation and exceptional performance.
+            Welcome to the ultimate Monster Energy drink catalog! You're a die-hard fan or just curious about the bold flavors, 
+            this website is your one-stop destination for exploring every variety in the Monster Energy lineup. 
+            <br>Discover your favorites and fuel up with the perfect Monster to match your vibe!
           </p>
           <div class="flex flex-wrap gap-4 justify-center">
-            <a href="/blog" class="btn btn-primary gap-2 btn-shine-effect">
-              <Icon name="lucide:book-open" class="w-5 h-5" />
-              <span>Explore Blog</span>
-            </a>
-            <a href="https://github.com/EveSunMaple/Frosti" target="_blank" class="btn btn-outline gap-2">
-              <Icon name="lucide:github" class="w-5 h-5" />
-              <span>Star on GitHub</span>
-            </a>
+            <div class="text-emerald-500 text-2xl font-bold mb-4">
+              <Icon name="lucide:arrow-big-down-dash" class="w-5 h-5 inline" /><span>Dive in</span><Icon name="lucide:arrow-big-down-dash" class="w-5 h-5 inline" />
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Features Section -->
+      <!-- Original Section -->
       <section class="py-6">
-        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Icon name="lucide:sparkles" class="w-6 h-6 text-primary" />
-          <span>Features</span>
+        <h2 class="text-2xl font-bold mb-6 flex place-self-center gap-2">
+          <Image
+            class="mask"
+            format="webp"
+            width={300}
+            height={150}
+            src={MONSTER + "/monster_original.webp"}
+            alt="Monster ultra"
+            loading="eager"
+          />
         </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6">
           <FeatureCard
-            title="Responsive Design"
-            description="Fully responsive design that looks great on all devices from mobile to desktop."
-            icon="lucide:smartphone"
-            color="oklch(0.7 0.2 30)"
+            title="The Original Green Monster Energy"
+            image={MONSTER_ORIGINAL + "/original_green.webp"}
+            description="Tear into a can of one of the meanest energy drinks on the planet, Monster OG. It's a smooth, refreshing blend of sweet and salty exotic citrus flavors with a hint of pure adrenaline packing 160mg of caffeine. Unleash the beast!"
+            flavor="Sweet and Salty - It tastes like Monster!"
+            color="#ADCD60"
           />
-
           <FeatureCard
-            title="Dark/Light Mode"
-            description="Toggle between light and dark themes with a beautiful transition effect."
-            icon="lucide:moon"
-            color="oklch(0.65 0.2 280)"
+            title="The Original Monster Energy Super-Premium Import"
+            image={MONSTER_ORIGINAL + "/original_super_premium.webp"}
+            description="Super-premium resealable Monster originally imported from Amsterdam. Import has the same can, same great taste, same winning formula and packs a punch with 180mg of caffeine to deliver the big, bad buzz."
+            flavor="Monster with a good clean Euro flav"
+            color="#ADCD60"
           />
-
           <FeatureCard
-            title="MDX Support"
-            description="Write your content in MDX with full support for React components and JSX."
-            icon="lucide:file-code"
-            color="oklch(0.6 0.2 160)"
+            title="Zero Sugar Monster Energy"
+            image={MONSTER_ORIGINAL + "/original_zero.webp"}
+            description="Monster Zero Sugar has the ideal combo of the right ingredients in the right proportion to deliver just the right kick with the same taste as OG but with Zero Sugar."
+            flavor="Sweet and Salty"
+            color="#ADCD60"
           />
-
           <FeatureCard
-            title="SEO Optimized"
-            description="Built-in SEO optimization with meta tags, OpenGraph, and JSON-LD."
-            icon="lucide:search"
-            color="oklch(0.6 0.2 200)"
+            title="The Original Lo-Carb Monster Energy"
+            image={MONSTER_ORIGINAL + "/original_locarb.webp"}
+            description="Monster Energy Lo-Carb packs a powerful punch and has a smooth, easy drinking flavor, but without glucose. Get a sweet & salty citrus twist with a fraction of the carbohydrates and only 30 calories per can and with 140mg of Caffeine."
+            flavor="Sweet and Salty - Lo-Carb Monster!"
+            color="#00C6E9"
           />
-
           <FeatureCard
-            title="Fast Performance"
-            description="Optimized for speed with lazy loading, code splitting, and minimal JavaScript."
-            icon="lucide:zap"
-            color="oklch(0.8 0.2 80)"
+            title="Monster Energy Nitro Super Dry"
+            image={MONSTER_ORIGINAL + "/original_nitro.webp"}
+            description="Super Dry is infused with nitrous-oxide creating a smooth, citrus flavor with a light & dry texture similar to fine champagne that is better experienced than explained."
+            flavor="Citrus with texture similar to fine champagne"
+            color="#DCF424"
           />
-
           <FeatureCard
-            title="Customizable"
-            description="Easily customize the theme to match your personal brand and preferences."
-            icon="lucide:palette"
-            color="oklch(0.7 0.2 10)"
+            title="Monster Energy Assault"
+            image={MONSTER_ORIGINAL + "/original_assault.webp"}
+            description="Refreshing; like a soft drink but loaded with the same energy blend that makes Monster the meanest energy drink on the planet. Assault packs a punch with 160mg of caffeine and has a smooth, easy Bourbon-Cola flavor."
+            flavor="Bourbon Cola & Monster"
+            color="#9D7757"
           />
         </div>
       </section>
 
-      <!-- Quick Start -->
+      <!-- Reserve Section -->
       <section class="py-6">
-        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Icon name="lucide:rocket" class="w-6 h-6 text-primary" />
-          <span>Quick Start</span>
+        <h2 class="text-2xl font-bold mb-6 flex place-self-center gap-2">
+          <Image
+            class="mask"
+            format="webp"
+            width={300}
+            height={150}
+            src={MONSTER + "/monster_reserve.webp"}
+            alt="Monster ultra"
+            loading="eager"
+          />
         </h2>
-
-        <div class="card bg-base-200 p-6">
-          <h3 class="text-xl font-bold mb-4">Get started in three simple steps:</h3>
-
-          <ol class="space-y-6 mb-6">
-            <li class="relative flex flex-col gap-4 items-start">
-              <div class="flex gap-4 items-center">
-                <div
-                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
-                >
-                  1
-                </div>
-                <h4 class="font-bold">Clone the repository</h4>
-              </div>
-              <div class="relative w-full">
-                <p class="text-base-content/70 mb-2">Use Git to clone the Frosti repository to your local machine:</p>
-                <div class="mockup-code text-sm mb-2">
-                  <pre><code>git clone --depth 1 https://github.com/EveSunMaple/Frosti.git Frosti</code></pre>
-                </div>
-              </div>
-            </li>
-
-            <li class="relative flex flex-col gap-4 items-start">
-              <div class="flex gap-4 items-center">
-                <div
-                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
-                >
-                  2
-                </div>
-                <h4 class="font-bold">Install dependencies</h4>
-              </div>
-              <div class="relative w-full">
-                <p class="text-base-content/70 mb-2">Navigate to the project directory and install dependencies:</p>
-                <div class="mockup-code text-sm mb-2">
-                  <pre><code>cd Frosti && npm install</code></pre>
-                </div>
-              </div>
-            </li>
-
-            <li class="relative flex flex-col gap-4 items-start">
-              <div class="flex gap-4 items-center">
-                <div
-                  class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-content flex-shrink-0"
-                >
-                  3
-                </div>
-                <h4 class="font-bold">Start the development server</h4>
-              </div>
-              <div class="relative w-full">
-                <p class="text-base-content/70 mb-2">Launch the local development server to see your blog:</p>
-                <div class="mockup-code text-sm mb-2">
-                  <pre><code>npm run build && npm run dev</code></pre>
-                </div>
-                <p class="text-base-content/70">
-                  Open your browser and navigate to <code class="bg-base-300 px-2 py-1 rounded"
-                    >http://localhost:4321</code
-                  > to see your blog in action!
-                </p>
-              </div>
-            </li>
-          </ol>
-
-          <div class="alert bg-primary/10 text-primary mb-0">
-            <Icon name="lucide:lightbulb" class="w-6 h-6" />
-            <span
-              >Check out the <a href="/blog" class="underline">blog section</a> for detailed guides and documentation.</span
-            >
-          </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6">
+          <FeatureCard
+            title="Monster Energy Reserve White Pineapple"
+            image={MONSTER_RESERVE + "/reserve_white_pineapple.webp"}
+            description="Monster Reserve White Pineapple gives you an authentic pineapple taste combined with the same powerful Monster Energy blend."
+            flavor="Monster Energy with authentic pineapple"
+            color="#FFF15C"
+          />
+          <FeatureCard
+            title="Monster Energy Reserve Orange Dreamsicle"
+            image={MONSTER_RESERVE + "/reserve_orange_dreamsicle.webp"}
+            description="Monster Reserve Orange Dreamsicle gives you a citrusy orange flavor combined with creamy vanilla bean that’s packed with the same powerful Monster Energy blend."
+            flavor="Monster Energy with creamy orange sherbet"
+            color="#FC8827"
+          />
+          <FeatureCard
+            title="Monster Energy Reserve Peaches n’ Crème"
+            image={MONSTER_RESERVE + "/reserve_peaches_ncreme.webp"}
+            description="Monster Reserve Peaches n’ Crème gives you a dessert-like flavor that is sure to satisfy your sweet cravings and energy needs all in one."
+            flavor="Monster Energy with sweet peaches & crème"
+            color="#F7B687"
+          />
         </div>
       </section>
 
-      <!-- GitHub Stats -->
+      <!-- Juice Section -->
       <section class="py-6">
-        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-          <Icon name="lucide:github" class="w-6 h-6 text-primary" />
-          <span>Repository Stats</span>
+        <h2 class="text-2xl font-bold mb-6 flex place-self-center gap-2">
+          <Image
+            class="mask"
+            format="webp"
+            width={300}
+            height={150}
+            src={MONSTER + "/monster_juice.webp"}
+            alt="Monster juice"
+            loading="eager"
+          />
         </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6">
+          <FeatureCard
+            title="Juice Monster Mango Loco"
+            image={MONSTER_JUICE + "/juice_mango_loco.webp"}
+            description="A heavenly blend of carbonated exotic juices, Mango Loco has that crazy good taste with that Monster magic to keep the party going for days."
+            flavor="Juicy Mango"
+            color="#00B9FE"
+          />
+          <FeatureCard
+            title="Juice Monster Pacific Punch"
+            image={MONSTER_JUICE + "/juice_pacific_punch.webp"}
+            description="A carbonated classic fruit punch with our Monster Energy blend, Pacific Punch will help put wind in your sails and keep you steady on course, no matter how rough the seas."
+            flavor="Classic Fruit Punch"
+            color="#E2CFAA"
+          />
+          <FeatureCard
+            title="Juice Monster Pipeline Punch"
+            image={MONSTER_JUICE + "/juice_pipeline_punch.webp"}
+            description="Like the Banzai Pipeline of Oahu, Pipeline Punch was destined to become a legend. The perfect carbonated blend of passion fruit, orange, guava, and our Monster Energy blend."
+            flavor="Passion Fruit, Orange, and Guava"
+            color="#EA4F68"
+          />
+          <FeatureCard
+            title="Juice Monster Rio Punch"
+            image={MONSTER_JUICE + "/juice_rio_punch.webp"}
+            description="A perfect mix of carbonated juices, vitamins, and our world-famous Monster energy blend. Taste the exotic flavors of Juice Monster Rio Punch, inspired by the epic energy of Rio De Janeiro’s Carnival"
+            flavor="Sweet papaya, vanilla ice cream, black currant"
+            color="#28AA2F"
+          />
+          <FeatureCard
+            title="Juice Monster Aussie Style Lemonade"
+            image={MONSTER_JUICE + "/juice_aussie_lemonade.webp"}
+            description="Inspired by the land down under and powered by our world-famous Monster Energy blend, Aussie Style Lemonade is a carbonated exotic twist on lemonade. Tart yet sweet, with a burst of fresh citrus flavor."
+            flavor="Exotic Lemonade"
+            color="#01898D"
+          />
+          <FeatureCard
+            title="Juice Monster Khaotic"
+            image={MONSTER_JUICE + "/juice_khaotic.webp"}
+            description="Born in '05, this carbonated orange-citrus juice changed the game. Reborn in 2021 to lighten the flavor and adjust the blend, Khaos became Khaotic with an upgraded paint job by legendary street artist and longtime Monster Energy friend, Risk."
+            flavor="Orange Citrus"
+            color="#EF8829"
+          />
+        </div>
+      </section>
 
-        <GitHubStats username="EveSunMaple" repositoryName="Frosti" showLanguages={true} showContributors={true} />
+      <!-- Rehab Section -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold mb-6 flex place-self-center gap-2">
+          <Image
+            class="mask"
+            format="webp"
+            width={300}
+            height={150}
+            src={MONSTER + "/monster_rehab.webp"}
+            alt="Monster rehab"
+            loading="eager"
+          />
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6">
+          <FeatureCard
+            title="Rehab Monster Strawberry Lemonade"
+            image={MONSTER_REHAB + "/rehab_strawberry_lemonade.webp"}
+            description="Strawberry Lemonade packed with electrolytes, vitamins, and botanicals that deliver on advanced hydration helping you reduce fatigue and increase concentration."
+            flavor="Strawberry Lemonade"
+            color="#DC1C2B"
+          />
+          <FeatureCard
+            title="Rehab Monster Tea & Lemonade"
+            image={MONSTER_REHAB + "/rehab_tea_lemonade.webp"}
+            description="Brewed Tea and Lemonade packed with electrolytes, vitamins, and botanicals that deliver on advanced hydration helping you reduce fatigue and increase concentration."
+            flavor="Brewed Tea and Lemonade"
+            color="#FEDE00"
+          />
+          <FeatureCard
+            title="Rehab Monster Peach Tea"
+            image={MONSTER_REHAB + "/rehab_peach_tea.webp"}
+            description="Brewed Peach Tea packed with electrolytes, vitamins, and botanicals that deliver on advanced hydration helping you reduce fatigue and increase concentration."
+            flavor="Brewed Peach Tea"
+            color="#F2984B"
+          />
+          <FeatureCard
+            title="Rehab Monster Wild Berry"
+            image={MONSTER_REHAB + "/rehab_wild_berry.webp"}
+            description="Wild Berry Tea packed with electrolytes, vitamins, and botanicals that deliver on advanced hydration helping you reduce fatigue and increase concentration."
+            flavor="Mixed Berry"
+            color="#A21965"
+          />
+          <FeatureCard
+            title="Rehab Monster Green Tea"
+            image={MONSTER_REHAB + "/rehab_green_tea.webp"}
+            description="Green Tea packed with electrolytes, vitamins, and botanicals that deliver on advanced hydration helping you reduce fatigue and increase concentration."
+            flavor="Green Tea"
+            color="#99C033"
+          />
+        </div>
+      </section>
+
+      <!-- Ultra Section -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold mb-6 flex place-self-center gap-2">
+          <Image
+            class="mask"
+            format="webp"
+            width={300}
+            height={150}
+            src={MONSTER + "/monster_ultra.webp"}
+            alt="Monster ultra"
+            loading="eager"
+          />
+          <!-- <Icon name="lucide:sparkles" class="w-6 h-6 text-primary" />
+          <span>Classics</span> -->
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6">
+          <FeatureCard
+            title="Zero Ultra a.k.a. The White Monster"
+            image={MONSTER_ULTRA + "/zero_ultra.webp"}
+            description="The light, refreshing citrus flavor of Zero Ultra has broken the rules of flavor. 10 calories, zero sugar, and a full load of our Monster Energy blend to keep the good times rolling."
+            flavor="Light Refreshing Citrus"
+            color="#B8B8B8"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Vice Guava"
+            image={MONSTER_ULTRA + "/zero_ultra_vice_guava.webp"}
+            description="With zero sugar to weigh you down, the fresh taste of perfectly ripened guava, and our world-famous Monster Energy blend, Ultra Vice Guava has you covered!"
+            flavor="Guava"
+            color="#40CFBA"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Fantasy Ruby Red"
+            image={MONSTER_ULTRA + "/zero_ultra_fantasy_ruby_red.webp"}
+            description="Ultra Fantasy Ruby Red, a refreshing drink that balances sweetness and tartness with a citrus flavor. It’s light and easy to drink, yet delivers the powerful Monster Energy blend you expect, featuring zero sugar and only 10 calories."
+            flavor="Fresh Pink Pamplemousse"
+            color="#CF539F"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Peachy Keen"
+            image={MONSTER_ULTRA + "/zero_ultra_peachy_keen.webp"}
+            description="Zero Sugar Ultra Peachy Keen has just 10 calories and a full load of our Monster Energy blend. The juicy peach flavor will send you back to the summer of love."
+            flavor="Refreshing Peach"
+            color="#E99E8F"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Watermelon"
+            image={MONSTER_ULTRA + "/zero_ultra_watermelon.webp"}
+            description="Ultra Watermelon brings you summer all year long. Zero sugar, bold watermelon flavor, 10 calories and the Monster Energy blend."
+            flavor="Refreshing Watermelon"
+            color="#F83C47"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Gold"
+            image={MONSTER_ULTRA + "/zero_ultra_gold.webp"}
+            description="Ultra Gold has the heavenly fresh flavor of a perfectly ripened golden pineapple. Zero Sugar, 10 calories, lighter tasting, and with our Monster Energy blend."
+            flavor="Refreshing Golden Pineapple"
+            color="#EBCB6A"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Sunrise"
+            image={MONSTER_ULTRA + "/zero_ultra_sunrise.webp"}
+            description="Ultra Sunrise's zero sugar orange blend is great morning or night. Zero sugar, 10 calories, and with a light, crisp, and refreshing flavor all its own."
+            flavor="Light and Crisp Citrus and Orange"
+            color="#CE632A"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Rosá"
+            image={MONSTER_ULTRA + "/zero_ultra_rosa.webp"}
+            description="Ultra Rosa is crafted with blend of flavors for a whole new experience. Zero Sugar, 10 calories, bright, and sweet!"
+            flavor="Bright and Sweet"
+            color="#D54F73"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Violet a.k.a. The Purple Monster"
+            image={MONSTER_ULTRA + "/zero_ultra_violet.webp"}
+            description="Inspired by the hazy purple funk and kaleidoscopes of the 70's, Ultra Violet has 10 calories, zero sugar, and a light citrus and grape flavor."
+            flavor="Light Citrus and Grape"
+            color="#6C4191"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Red"
+            image={MONSTER_ULTRA + "/zero_ultra_red.webp"}
+            description="Made right here in the USA, zero sugar Ultra Red is great for any occasion. Light, crisp, refreshing berry flavor with only 10 calories but all the flavor you're accustomed to."
+            flavor="Crisp and Refreshing Mixed Berry"
+            color="#CC2131"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Blue a.k.a. The Blue Monster"
+            image={MONSTER_ULTRA + "/zero_ultra_blue.webp"}
+            description="Inspired by epic snow trips and mountain towns, Sugar-free Ultra Blue has a light citrus and berry flavor, with 10 calories and a full-load of our Monster energy blend."
+            flavor="Light Citrus and Berry"
+            color="#5793D1"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Black"
+            image={MONSTER_ULTRA + "/zero_ultra_black.webp"}
+            description="Zero Sugar Monster Ultra Black offers a crisp, slightly sweet black cherry flavor with just 10 calories. Get it while the getting's is good."
+            flavor="Crisp and Refreshing Black Cherry"
+            color="#111111"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Strawberry Dreams"
+            image={MONSTER_ULTRA + "/zero_ultra_strawberry_dreams.webp"}
+            description="Take just one sip and you'll be crazy for Ultra Strawberry Dreams. Wonderfully sweet, while slightly tart, this easy-drinking Ultra tastes like a dream."
+            flavor="Sweet, yet tart strawberry flavor"
+            color="#E3A6CD"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Paradise"
+            image={MONSTER_ULTRA + "/zero_ultra_paradise.webp"}
+            description="Ultra Paradise is wherever you can find it. Delivering island flavors with kiwi, lime, and a hint of cucumber, with just 10 calories and zero sugar."
+            flavor="Kiwi Lime with a hint of Cucumber"
+            color="#71B339"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Fiesta Mango"
+            image={MONSTER_ULTRA + "/zero_ultra_fiesta_mango.webp"}
+            description="Ultra Fiesta has a juicy mango flavor, zero sugar, and is finished-off with a full load of our Monster Energy blend."
+            flavor="Cool Mango"
+            color="#017D87"
+          />
+          <FeatureCard
+            title="Zero-Sugar Ultra Blue Hawaiian"
+            image={MONSTER_ULTRA + "/zero_ultra_blue_hawaiian.webp"}
+            description="Light, crisp, and super easy drinking with a tropical tiki twist. Ultra Blue Hawaiian is a killer combo of exotic Polynesian fruit flavors that are big on taste, with zero sugar."
+            flavor="Light & Easy-Drinking Tropical Blend"
+            color="#00B1DA"
+          />
+        </div>
+      </section>
+
+      <!-- Java Section -->
+      <section class="py-6">
+        <h2 class="text-2xl font-bold mb-6 flex place-self-center gap-2">
+          <Image
+            class="mask"
+            format="webp"
+            width={300}
+            height={150}
+            src={MONSTER + "/monster_java.webp"}
+            alt="Monster rehab"
+            loading="eager"
+          />
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6">
+          <FeatureCard
+            title="Java Monster Mean Bean"
+            image={MONSTER_JAVA + "/java_mean_bean.webp"}
+            description="It's time to break your coffee routine with Java Monster. Mean Bean is coffee + cream in an indulgent vanilla flavor. Java Monster… premium coffee and cream brewed up with killer flavor, supercharged with Monster energy blend."
+            flavor="Vanilla Bean"
+            color="#DCBF8B"
+          />
+          <FeatureCard
+            title="Java Monster Loca Moca"
+            image={MONSTER_JAVA + "/java_loca_moca.webp"}
+            description="It's time to break your coffee routine with Java Monster. Loca Moca is coffee + cream in an indulgent mocha chocolate flavor. Java Monster… premium coffee and cream brewed up with killer flavor, supercharged with Monster energy blend."
+            flavor="Chocolate Mocha"
+            color="#B6825E"
+          />
+          <FeatureCard
+            title="Java Monster Salted Caramel"
+            image={MONSTER_JAVA + "/java_salted_caramel.webp"}
+            description="It's time to break your coffee routine with Java Monster. Salted Caramel is coffee + cream in an indulgent salted caramel flavor. Java Monster… premium coffee and cream brewed up with killer flavor, supercharged with Monster energy blend."
+            flavor="Sweet and Savory Salted Caramel"
+            color="#D5A043"
+          />
+          <FeatureCard
+            title="Java Monster Irish Crème"
+            image={MONSTER_JAVA + "/java_irish_creme.webp"}
+            description="Introducing the new and improved Java Monster Irish Crème! Java Monster Irish Crème is premium coffee + cream supercharged with legendary Monster Energy blend."
+            flavor="Non-Alcoholic Irish Coffee"
+            color="#32B753"
+          />
+          <FeatureCard
+            title="Café Latte"
+            image={MONSTER_JAVA + "/java_cafe_latte.webp"}
+            description="Java Monster Café Latte is coffee forward with the right amount of cream and sugar, supercharged with the Monster Energy blend."
+            flavor="Coffee forward with cream and sugar"
+            color="#483321"
+          />
+        </div>
+      </section>
+
+       <!-- Tripleshot Section -->
+       <section class="py-6">
+        <h2 class="text-2xl font-bold mb-6 flex place-self-center gap-2">
+          <Image
+            class="mask"
+            format="webp"
+            width={300}
+            height={150}
+            src={MONSTER + "/monster_tripleshot.webp"}
+            alt="Monster rehab"
+            loading="eager"
+          />
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols3 gap-6">
+          <FeatureCard
+            title="Killer Brew Mean Bean"
+            image={MONSTER_TRIPLE_SHOT + "/killer_mean_bean.webp"}
+            description="Killer Brew Mean Bean is brewed coffee plus cream with an indulgent vanilla coffee forward flavor. Killer Brew packs a 300mg punch of caffeine derived from both coffee and the Monster energy blend you know and love. Killer flavor and killer strength."
+            flavor="Vanilla Coffee"
+            color="#147D95"
+          />
+          <FeatureCard
+            title="Killer Brew Loca Moca"
+            image={MONSTER_TRIPLE_SHOT + "/killer_loca_moca.webp"}
+            description="Killer Brew Loca Moca is brewed coffee plus cream with an indulgent mocha flavor. Killer Brew packs a 300mg punch of caffeine derived from both coffee and the Monster energy blend you know and love. Killer flavor and killer strength."
+            flavor="Mocha"
+            color="#CB1E3B"
+          />
+          <FeatureCard
+            title="Java Monster Triple Shot French Vanilla"
+            image={MONSTER_TRIPLE_SHOT + "/3s_french_vanilla.webp"}
+            description="For those of us who need that extra boost comes Java Monster 300. Java Monster French Vanilla has 300mg of natural caffeine in an indulgent French Vanilla flavor."
+            flavor="Vanilla notes, caramelized and custard-like"
+            color="#4EBEEB"
+          />
+          <FeatureCard
+            title="Java Monster Triple Shot Mocha"
+            image={MONSTER_TRIPLE_SHOT + "/3s_mocha.webp"}
+            description="For those of us who need that extra boost comes Java Monster 300. Java Monster Mocha has 300mg of natural caffeine in an indulgent Mocha Chocolate flavor."
+            flavor="Rich chocolate with robust brewed coffee"
+            color="#D33134"
+          />
+        </div>
+      </section>
+
+      <!-- Scroll to top -->
+      <section class="py-6">
+        <div class="flex flex-wrap gap-4 justify-center">
+          <ScrollToTop />
+        </div>
       </section>
     </div>
   </MainCard>
