@@ -18,21 +18,21 @@ site:
       target: _self
 
 monster:
-  logo: ./image
+  logo: /image
   drink:
-    original: ./image/drink/original
-    reserve: ./image/drink/reserve
-    ultra: ./image/drink/ultra
-    juice: ./image/drink/juice
-    rehab: ./image/drink/rehab
-    java: ./image/drink/java
-    triple_shot: ./image/drink/triple_shot
+    original: /image/drink/original
+    reserve: /image/drink/reserve
+    ultra: /image/drink/ultra
+    juice: /image/drink/juice
+    rehab: /image/drink/rehab
+    java: /image/drink/java
+    triple_shot: /image/drink/triple_shot
 
 # 用户的个人信息
 user:
   name: Meta # 用户名
   site: "https://metanef.github.io/" # 用户的网站链接
-  avatar: ./profile.png # 用户头像路径
+  avatar: /profile.png # 用户头像路径
   sidebar: # 侧边栏配置
     social:
       - href: "https://afdian.com/a/saroprock" # 链接
